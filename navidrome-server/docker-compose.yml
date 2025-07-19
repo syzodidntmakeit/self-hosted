@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  navidrome:
+    image: deluan/navidrome
+    container_name: navidrome
+    ports:
+      - "4533:4533" # Super secure port, totally. Deafult by Navidrome.
+    volumes:
+      - ~/Desktop/navidrome/music:/music # For stored files (mostly in FLAC)
+      - ~/Desktop/navidrome/data:/data # For data or metadata
+    restart: unless-stopped # Starts as soon as boot-up so I don't have to run it myself
