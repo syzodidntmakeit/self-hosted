@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    ports:
+      - "8096:8096"
+    volumes:
+      - ~/Anime:/media
+      - ~/jellyfin/config:/config
+      - ~/jellyfin/cache:/cache
+    restart: unless-stopped
